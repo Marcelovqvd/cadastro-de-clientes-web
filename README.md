@@ -1,44 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+•	Implemente um sistema web usando Reactjs com Typescript
 
-## Available Scripts
+Dados para:
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1-  Um cadastro de cliente com Nome, Nascimento, CPF, Celular, E-mail,
+Endereço e Observação (textarea) e com máscaras nos campos.
+- Validações:
+0) Todos os campos são obrigatórios, exceto observações. (validar antes
+de tudo)
+1) Nome: Não permitir caracteres especiais (somente letras com ou sem
+acento).
+2) Nascimento: Validar datas impossíveis (ex.: 32/13/123). Não precisa
+validar meses com 28, 30, 31 dias.
+3) CPF: Detectar CPF inválido (pode pegar uma função pronta da
+internet).
+4) Celular: Verificar se possui o dígito 9 no começo. formato: (XX)
+9XXXX-XXXX
+5) E-mail: Verificar se possui somente um @, com texto antes e depois.
+6) Observação: Máximo de 300 caracteres.
+*) Implementar outras validações são um diferencial.
+2 -  Uma listagem de clientes com possibilidade de edição e exclusão de
+registros;
+- A listagem deverá¡ ter um filtro textual que efetua a busca em todos os
+campos por substring case-insensitive;
+- A lista deve possuir sempre 10 registros e ser paginada.
+Considerações finais:
+- Todos os dados devem ser salvos localmente, porém deve se ter efeito de requisição
+- Comentários no código não são obrigatórios, porém ajudam a validar o seu conhecimento sobre o assunto.
+- Opcional: Criar um README com instruções de setup do sistema para podermos
+executá-lo e avaliar o resultado
