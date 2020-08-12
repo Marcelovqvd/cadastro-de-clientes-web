@@ -16,8 +16,6 @@ const SignUp: React.FC = () => {
   const { register, handleSubmit, errors } = useForm();
 
   function onSubmit(data) {
-    console.log('Data submitted: ', data);
-
     api
       .post('/clients', data)
       .then(() => {
@@ -68,10 +66,10 @@ const SignUp: React.FC = () => {
         name="whatsapp"
         ref={register({
           required: 'Enter your whatsapp',
-          /* pattern: {
-            value: /[1-9]{2}\|9[0-9]{8}$/i,
+          pattern: {
+            value: /^([1-2][1-9]9\d{8})$/i,
             message: 'Enter a valid whatsapp number',
-          }, */
+          },
         })}
       />
       {errors.whatsapp && <p className="error">{errors.whatsapp.message}</p>}
