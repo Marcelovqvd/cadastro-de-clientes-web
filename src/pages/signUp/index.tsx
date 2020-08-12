@@ -14,38 +14,34 @@ const SignUp: React.FC = () => {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
   const [birth, setBirth] = useState('');
-  const [address, setAddress] = useState('');
   const [cpf, setCPF] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [address, setAddress] = useState('');
   const [comments, setComments] = useState('');
 
   async function handleCreateClient(e: FormEvent) {
     e.preventDefault();
 
-    const id = uuid();
-
     api
-      .post('/', {
-        id,
+      .post('/clients', {
+        id: uuid(),
         name,
         email,
-        whatsapp,
         birth,
-        address,
         cpf,
+        whatsapp,
+        address,
         comments,
       })
       .then(() => {
-        alert('Cadastro realizado com sucesso!');
-
+        // alert('Cadastro realizado com sucesso!');
+        console.log(name, email, birth, cpf, whatsapp, address, comments);
         history.push('/listclients');
       })
       .catch(() => {
-        alert('Erro no cadastro');
+        // alert('Erro no cadastro');
       });
-
-    console.log({ id, name, email, whatsapp, birth, address, cpf, comments });
   }
 
   return (

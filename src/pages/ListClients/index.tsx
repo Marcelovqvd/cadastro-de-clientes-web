@@ -21,8 +21,6 @@ const ListClients: React.FC = () => {
   async function handleClients(e: FormEvent) {
     e.preventDefault();
     const response = await api.get('/clients');
-
-    console.log(setClients);
     setClients(response.data);
   }
 

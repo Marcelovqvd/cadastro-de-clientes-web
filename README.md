@@ -28,3 +28,8 @@ Considerações finais:
 - Comentários no código não são obrigatórios, porém ajudam a validar o seu conhecimento sobre o assunto.
 - Opcional: Criar um README com instruções de setup do sistema para podermos
 executá-lo e avaliar o resultado
+
+
+JSON server
+entrar na pasta server => cd server
+executar => json-server --watch db.json
