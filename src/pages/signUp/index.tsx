@@ -1,9 +1,10 @@
-import React, { useState, FormEvent } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 import { uuid } from 'uuidv4';
 
-import Input from '../../components/Input';
+// import Input from '../../components/Input';
 
 import api from '../../services/api';
 
@@ -12,99 +13,110 @@ import './styles';
 const SignUp: React.FC = () => {
   const history = useHistory();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [birth, setBirth] = useState('');
-  const [cpf, setCPF] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [address, setAddress] = useState('');
-  const [comments, setComments] = useState('');
+  const { register, handleSubmit, errors } = useForm();
 
-  async function handleCreateClient(e: FormEvent) {
-    e.preventDefault();
+  function onSubmit(data) {
+    console.log('Data submitted: ', data);
 
     api
-      .post('/clients', {
-        id: uuid(),
-        name,
-        email,
-        birth,
-        cpf,
-        whatsapp,
-        address,
-        comments,
-      })
+      .post('/clients', data)
       .then(() => {
-        // alert('Cadastro realizado com sucesso!');
-        console.log(name, email, birth, cpf, whatsapp, address, comments);
-        history.push('/listclients');
+        alert('Cadastro realizado com sucesso!');
+
+        history.push('/');
       })
       .catch(() => {
-        // alert('Erro no cadastro');
+        alert('Erro no cadastro');
       });
   }
 
   return (
-    <form onSubmit={handleCreateClient}>
-      <fieldset>
-        <legend>Seus dados</legend>
-        <Input
-          name="name"
-          label="Nome completo"
-          value={name}
-          onChange={e => {
-            setName(e.target.value);
-          }}
-        />
-        <Input
-          name="email"
-          label="email"
-          value={email}
-          onChange={e => {
-            setEmail(e.target.value);
-          }}
-        />
-        <Input
-          name="whatsapp"
-          label="Whatsapp"
-          value={whatsapp}
-          onChange={e => {
-            setWhatsapp(e.target.value);
-          }}
-        />
-        <Input
-          name="address"
-          label="Endereço"
-          value={address}
-          onChange={e => {
-            setAddress(e.target.value);
-          }}
-        />
-        <Input
-          name="birth"
-          label="Data de nascimento completo"
-          value={birth}
-          onChange={e => {
-            setBirth(e.target.value);
-          }}
-        />
-        <Input
-          name="cpf"
-          label="Digite seu CPF"
-          value={cpf}
-          onChange={e => {
-            setCPF(e.target.value);
-          }}
-        />
-        <textarea
-          name="observation"
-          value={comments}
-          onChange={e => {
-            setComments(e.target.value);
-          }}
-          maxLength={200}
-        />
-      </fieldset>
+    <form onSubmit={handleSubmit(onSubmit)} noValidate>
+      <legend>Seus dados</legend>
+      <label htmlFor="inputName">Nome</label>
+      <input
+        type="name"
+        id="inputName"
+        name="name"
+        ref={register({
+          required: 'Digite seu nome',
+          pattern: {
+            value: /^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/i,
+            message: 'Caractere não aceito',
+          },
+        })}
+      />
+      {errors.name && <p className="error">{errors.name.message}</p>}
+      <label htmlFor="inputEmail">E-mail</label>
+      <input
+        type="email"
+        id="inputEmail"
+        name="email"
+        ref={register({
+          required: 'Enter your e-mail',
+          pattern: {
+            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+            message: 'Enter a valid e-mail address',
+          },
+        })}
+      />
+      {errors.email && <p className="error">{errors.email.message}</p>}
+      <label htmlFor="inputWhatsapp">whatsapp</label>
+      <input
+        type="whatsapp"
+        id="whatsapp"
+        name="whatsapp"
+        ref={register({
+          required: 'Enter your whatsapp',
+          /* pattern: {
+            value: /[1-9]{2}\|9[0-9]{8}$/i,
+            message: 'Enter a valid whatsapp number',
+          }, */
+        })}
+      />
+      {errors.whatsapp && <p className="error">{errors.whatsapp.message}</p>}
+      <label htmlFor="inputBirth">Data de Nascimento</label>
+      <input
+        type="birth"
+        id="birth"
+        name="birth"
+        ref={register({
+          required: 'Campo obrigatório',
+          pattern: {
+            value: /[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/i,
+            message: 'Insira uma data válida!',
+          },
+        })}
+      />
+      {errors.birth && <p className="error">{errors.birth.message}</p>}
+      <label htmlFor="inputCPF">CPF</label>
+      <input
+        type="cpf"
+        id="cpf"
+        name="cpf"
+        ref={register({
+          required: 'Campo obrigatório',
+          pattern: {
+            value: /^\d{3}.\d{3}.\d{3}-\d{2}$/i,
+            message: 'Insira um cpf válido',
+          },
+        })}
+      />
+      {errors.cpf && <p className="error">{errors.cpf.message}</p>}
+      <label htmlFor="inputCPF">Endereço</label>
+      <input
+        type="address"
+        id="address"
+        name="address"
+        ref={register({
+          required: 'Campo obrigatório',
+        })}
+      />
+      {errors.address && <p className="error">{errors.address.message}</p>}
+      <label htmlFor="inputComments">Deixe sua mensagem</label>
+      <input type="comments" id="comments" name="comments" />
+      {errors.comments && <p className="error">{errors.comments.message}</p>}
+
       <button type="submit">Cadastrar</button>
     </form>
   );
