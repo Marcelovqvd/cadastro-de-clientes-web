@@ -1,16 +1,6 @@
 {
   "clients": [
     {
-      "id": "6fcefb88-a19b-4b11-a2c3-2643cc190dbc",
-      "name": "Marcelo",
-      "email": "marcelovqvd@gmail.com",
-      "birth": "27/06/1978",
-      "cpf": "99999999999",
-      "whatsapp": "1199999999",
-      "address": "Rua Miziara, 1535",
-      "comments": "sdf ds"
-    },
-    {
       "id": "d3c0f3f3-695c-483d-aa35-73d7523496fc",
       "name": "Marcelo",
       "email": "marcelovqvd@gmail.com",

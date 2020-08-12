@@ -70,16 +70,15 @@ const ListClients: React.FC = () => {
   }
 
   async function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    const { name, value } = event.target;
+    const { value } = event.target;
 
     setSearch(value);
   }
 
   return (
     <>
-      <Title>List</Title>
+      <Title>Lista de Clientes</Title>
       <form onSubmit={handleClients}>
-        <button type="submit">Mostrar clientes</button>
         <input
           type="text"
           placeholder="Buscar ..."
@@ -107,9 +106,9 @@ const ListClients: React.FC = () => {
                 </button>
 
                 <button type="button">
-                  <Link title="Editar Usuário" to={`/useredit/${client.id}`}>
+                  <Link title="Editar Usuário" to={`/clientedit/${client.id}`}>
                     <span>
-                      <span>edit</span>
+                      <span>Editar cliente</span>
                     </span>
                   </Link>
                 </button>
@@ -117,6 +116,14 @@ const ListClients: React.FC = () => {
             );
           })}
         </ul>
+
+        <button type="button">
+          <Link title="Editar Usuário" to="/">
+            <span>
+              <span>Home</span>
+            </span>
+          </Link>
+        </button>
       </main>
     </>
   );
