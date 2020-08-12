@@ -112,7 +112,7 @@ const SignUp: React.FC = () => {
       />
       {errors.address && <p className="error">{errors.address.message}</p>}
       <label htmlFor="inputComments">Deixe sua mensagem</label>
-      <input type="comments" id="comments" name="comments" />
+      <textarea id="comments" name="comments" />
       {errors.comments && <p className="error">{errors.comments.message}</p>}
 
       <button type="submit">Cadastrar</button>
