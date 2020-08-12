@@ -15,7 +15,18 @@ const ClientEdit: React.FC = ({ match }: RouteComponentProps<Clientmatch>) => {
     console.log(userId);
   });
 
-  return <h1>Editar client</h1>;
+  return (
+    <>
+      <h1>Editar client</h1>
+      <button type="button">
+        <Link title="Editar Usuário" to="/">
+          <span>
+            <span>Home</span>
+          </span>
+        </Link>
+      </button>
+    </>
+  );
 };
 
 export default ClientEdit;
