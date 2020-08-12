@@ -1,6 +1,8 @@
 import React, { useState, FormEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import { uuid } from 'uuidv4';
+
 import Input from '../../components/Input';
 
 import api from '../../services/api';
@@ -13,30 +15,37 @@ const SignUp: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
-  const [address, setAddress] = useState('');
   const [birth, setBirth] = useState('');
+  const [address, setAddress] = useState('');
+  const [cpf, setCPF] = useState('');
+  const [comments, setComments] = useState('');
 
-  function handleCreateClient(e: FormEvent) {
+  async function handleCreateClient(e: FormEvent) {
     e.preventDefault();
 
-    console.log(name, email, whatsapp, address, birth);
+    const id = uuid();
 
-    /* api
-      .post('/classes', {
+    api
+      .post('/', {
+        id,
         name,
         email,
         whatsapp,
-        address,
         birth,
+        address,
+        cpf,
+        comments,
       })
       .then(() => {
         alert('Cadastro realizado com sucesso!');
 
-        history.push('/');
+        history.push('/listclients');
       })
       .catch(() => {
         alert('Erro no cadastro');
-      }); */
+      });
+
+    console.log({ id, name, email, whatsapp, birth, address, cpf, comments });
   }
 
   return (
@@ -82,6 +91,22 @@ const SignUp: React.FC = () => {
           onChange={e => {
             setBirth(e.target.value);
           }}
+        />
+        <Input
+          name="cpf"
+          label="Digite seu CPF"
+          value={cpf}
+          onChange={e => {
+            setCPF(e.target.value);
+          }}
+        />
+        <textarea
+          name="observation"
+          value={comments}
+          onChange={e => {
+            setComments(e.target.value);
+          }}
+          maxLength={200}
         />
       </fieldset>
       <button type="submit">Cadastrar</button>

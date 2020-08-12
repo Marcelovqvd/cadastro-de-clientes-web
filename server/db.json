@@ -1,0 +1,24 @@
+{
+  "clients": [
+    {
+      "name": "Marcelo Ramones",
+      "birth": "27/06/1978",
+      "cpf": 99999999999,
+      "phone": 11999999999,
+      "email": "marcelovqvd@gmail.com",
+      "address": "Av. Paulista, 123, centro, São Paulo/SP",
+      "obs": "observação",
+      "date": "{% now 'iso-8601', '' %}"
+    },
+    {
+      "name": "Marcelo Vasques",
+      "birth": "27/06/1978",
+      "cpf": 99999999999,
+      "phone": 11999999999,
+      "email": "marcelovqvd@gmail.com",
+      "address": "Av. Paulista, 123, centro, São Paulo/SP",
+      "obs": "observação",
+      "date": "{% now 'iso-8601', '' %}"
+    }
+  ]
+}

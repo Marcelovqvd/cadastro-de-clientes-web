@@ -1,15 +1,15 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import ListClients from '../pages/ListClients';
 import SignUp from '../pages/signUp';
+import ListClients from '../pages/ListClients';
 
 function Routes() {
   return (
-    <Switch>
+    <BrowserRouter>
       <Route path="/" exact component={SignUp} />
       <Route path="/listclients" component={ListClients} />
-    </Switch>
+    </BrowserRouter>
   );
 }
 
