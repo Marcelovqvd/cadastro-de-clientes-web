@@ -9,7 +9,7 @@ import { uuid } from 'uuidv4';
 
 import api from '../../services/api';
 
-import './styles';
+import { Container, Title, Form } from './styles';
 
 const SignUp: React.FC = () => {
   const history = useHistory();
@@ -30,8 +30,9 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
+    <Container>
+      <Title>Cadastre-se</Title>
+      <Form onSubmit={handleSubmit(onSubmit)} noValidate>
         <legend>Seus dados</legend>
         <label htmlFor="inputName">Nome</label>
         <input
@@ -118,7 +119,7 @@ const SignUp: React.FC = () => {
         {errors.comments && <p className="error">{errors.comments.message}</p>}
 
         <button type="submit">Cadastrar</button>
-      </form>
+      </Form>
       <button type="button">
         <Link title="Editar Usuário" to="/listclients">
           <span>
@@ -126,7 +127,7 @@ const SignUp: React.FC = () => {
           </span>
         </Link>
       </button>
-    </>
+    </Container>
   );
 };
 

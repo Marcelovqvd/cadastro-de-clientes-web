@@ -1,26 +1,6 @@
 {
   "clients": [
     {
-      "id": "d3c0f3f3-695c-483d-aa35-73d7523496fc",
-      "name": "Marcelo",
-      "email": "marcelovqvd@gmail.com",
-      "birth": "27/06/1978",
-      "cpf": "99999999999",
-      "whatsapp": "1199999999",
-      "address": "Rua Miziara, 1535",
-      "comments": "dsa sdfsd "
-    },
-    {
-      "id": "7a89b56c-2977-48f5-a75f-8239aea5e310",
-      "name": "Marcelo",
-      "email": "",
-      "birth": "",
-      "cpf": "",
-      "whatsapp": "",
-      "address": "",
-      "comments": ""
-    },
-    {
       "id": "20489ab9-9bc9-4014-af5a-ca72ca102ca0",
       "name": "Marcelo",
       "email": "marcelovqvd@gmail.com",
@@ -38,15 +18,6 @@
       "cpf": "999.999.999-99",
       "address": "Queens",
       "id": "aJHxpIF"
-    },
-    {
-      "name": "Marcelo",
-      "email": "marcelovqvd@gmail.com",
-      "whatsapp": "11949989635",
-      "birth": "27/06/1978",
-      "cpf": "999.999.999-89",
-      "address": "Rua Miziara, 1535",
-      "id": "aqFYM3A"
     }
   ]
 }
