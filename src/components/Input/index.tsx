@@ -1,33 +1,19 @@
-import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
-import { useField } from '@unform/core';
-import { Container } from './styles';
+import React, { InputHTMLAttributes } from 'react';
+
+import './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  email: string;
-  birth: string;
-  cpf: number;
-  whatsapp: number;
-  address: string;
-  obs: string;
+  label: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, ...rest }) => {
-  const inputRef = useRef(null);
-  const { fieldName, defaultValue, error, registerField } = useField(name);
-
-  useEffect(() => {
-    registerField({
-      name: fieldName,
-      ref: inputRef.current,
-      path: 'value',
-    });
-  }, [fieldName, registerField]);
-
+const Input: React.FC<InputProps> = ({ name, label, ...rest }) => {
   return (
-    <Container>
-      <input defaultValue={defaultValue} ref={inputRef} {...rest} />
-    </Container>
+    <div className="input-block">
+      <label htmlFor={name}>{label}</label>
+      <input type="text" id={name} {...rest} />
+    </div>
   );
 };
+
 export default Input;
