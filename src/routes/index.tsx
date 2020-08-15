@@ -1,17 +1,19 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import SignUp from '../pages/signUp';
+import SignIn from '../pages/SignIn';
+import Register from '../pages/Register';
 import ListClients from '../pages/ListClients';
 // import ClientEdit from '../pages/EditClients';
 
-function Routes() {
+const Routes: React.FC = () => {
   return (
     <BrowserRouter>
-      <Route path="/" exact component={SignUp} />
+      <Route path="/" exact component={SignIn} />
+      <Route path="/register" component={Register} />
       <Route path="/listclients" component={ListClients} />
     </BrowserRouter>
   );
-}
+};
 
 export default Routes;

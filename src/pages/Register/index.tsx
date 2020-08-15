@@ -11,7 +11,7 @@ import api from '../../services/api';
 
 import { Container, Title, Form } from './styles';
 
-const SignUp: React.FC = () => {
+const Register: React.FC = () => {
   const history = useHistory();
 
   const { register, handleSubmit, errors } = useForm();
@@ -22,7 +22,7 @@ const SignUp: React.FC = () => {
       .then(() => {
         alert('Cadastro realizado com sucesso!');
 
-        history.push('/');
+        history.push('/listclients');
       })
       .catch(() => {
         alert('Erro no cadastro');
@@ -31,7 +31,7 @@ const SignUp: React.FC = () => {
 
   return (
     <Container>
-      <Title>Cadastre-se</Title>
+      <Title>Cadasto de clientes</Title>
       <Form onSubmit={handleSubmit(onSubmit)} noValidate>
         <legend>Seus dados</legend>
         <label htmlFor="inputName">Nome</label>
@@ -131,4 +131,4 @@ const SignUp: React.FC = () => {
   );
 };
 
-export default SignUp;
+export default Register;
