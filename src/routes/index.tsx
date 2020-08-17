@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
-import Register from '../pages/Register';
 import ListClients from '../pages/ListClients';
 import Clientregister from '../pages/ClientRegister';
 
@@ -12,7 +11,6 @@ const Routes: React.FC = () => {
     <BrowserRouter>
       <Route path="/" exact component={SignIn} />
       <Route path="/signup" exact component={SignUp} />
-      <Route path="/register" component={Register} />
       <Route path="/listclients" component={ListClients} />
       <Route path="/clientregister" component={Clientregister} />
     </BrowserRouter>
