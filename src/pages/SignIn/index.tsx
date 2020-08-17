@@ -13,15 +13,15 @@ const SignUp: React.FC = () => {
         <img src={logoImg} alt="logo" />
         <form>
           <h1>Entre com seu login e senha</h1>
-          <input type="text" />
-          <input type="password" />
+          <input type="text" placeholder="Email" />
+          <input type="password" placeholder="Senha" />
           <button type="submit">Entrar</button>
-          <Link to="/register">
-            <FiLogIn />
-            Criar conta
-          </Link>
+          <a href="/forgot">Esqueceu sua senha?</a>
         </form>
-        <p>Esqueceu sua senha?</p>
+        <Link to="/register">
+          <FiLogIn />
+          Criar conta
+        </Link>
       </Content>
       <Background />
     </Container>
