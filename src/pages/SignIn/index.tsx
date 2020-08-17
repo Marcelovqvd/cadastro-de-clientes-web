@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiLogIn } from 'react-icons/fi';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 
 import logoImg from '../../assets/logoImg.svg';
 
@@ -18,8 +18,8 @@ const SignUp: React.FC = () => {
         <form>
           <h1>Entre com seu login e senha</h1>
 
-          <Input name="email" placeholder="Email" />
-          <Input name="passsword" type="password" placeholder="Senha" />
+          <Input name="email" icon={FiMail} placeholder="Email" />
+          <Input name="passsword" icon={FiLock} type="password" placeholder="Senha" />
 
           <Button type="submit">Entrar</Button>
 
