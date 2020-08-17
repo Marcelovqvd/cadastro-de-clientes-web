@@ -2,17 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 
-import { Container, Content, Background, Form } from './styles';
+import { Container, Content, Background } from './styles';
 
-import logo from '../../assets/logoImg.svg';
+import logoImg from '../../assets/logoImg.svg';
 
 const SignUp: React.FC = () => {
   return (
     <Container>
       <Content>
-        <img src={logo} alt="logo" />
-        <Form>
-          <p>Entre com seu login e senha</p>
+        <img src={logoImg} alt="logo" />
+        <form>
+          <h1>Entre com seu login e senha</h1>
           <input type="text" />
           <input type="password" />
           <button type="submit">Entrar</button>
@@ -20,7 +20,7 @@ const SignUp: React.FC = () => {
             <FiLogIn />
             Criar conta
           </Link>
-        </Form>
+        </form>
         <p>Esqueceu sua senha?</p>
       </Content>
       <Background />
