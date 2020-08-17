@@ -14,13 +14,18 @@ const SignUp: React.FC = () => {
     <Container>
       <Content>
         <img src={logoImg} alt="logo" />
+
         <form>
           <h1>Entre com seu login e senha</h1>
-          <Input name="input" type="text" placeholder="Email" />
-          <Input name="input" type="password" placeholder="Senha" />
+
+          <Input name="email" placeholder="Email" />
+          <Input name="passsword" type="password" placeholder="Senha" />
+
           <Button type="submit">Entrar</Button>
+
           <a href="/forgot">Esqueceu sua senha?</a>
         </form>
+
         <Link to="/register">
           <FiLogIn />
           Criar conta
