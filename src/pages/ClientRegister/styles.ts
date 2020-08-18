@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 960px;
   font-size: 16px;
   display: flex;
   flex-direction: column;
@@ -11,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
+  margin: 20px 0;
   font-size: 26px;
 `;
 
@@ -20,4 +20,13 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  legend {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  label {
+    margin: 20px 0 5px 0;
+  }
 `;

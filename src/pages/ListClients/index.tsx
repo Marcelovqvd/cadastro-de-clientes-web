@@ -1,5 +1,5 @@
 import React, { useState, FormEvent, useEffect, ChangeEvent } from 'react';
-import { Link } from 'react-router-dom';
+/* import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
@@ -14,10 +14,10 @@ interface Client {
   whatsapp: string;
   address: string;
   observation: string;
-}
+} */
 
 const ListClients: React.FC = () => {
-  const [clients, setClients] = useState([]);
+  /* const [clients, setClients] = useState([]);
   const [search, setSearch] = useState('');
 
   async function handleClients(e: FormEvent) {
@@ -73,9 +73,11 @@ const ListClients: React.FC = () => {
     const { value } = event.target;
 
     setSearch(value);
-  }
+  } */
 
-  return (
+  return <h1>Lista</h1>
+
+  /* (
     <>
       <Title>Lista de Clientes</Title>
       <form onSubmit={handleClients}>
@@ -126,7 +128,7 @@ const ListClients: React.FC = () => {
         </button>
       </main>
     </>
-  );
+  ); */
 };
 
 export default ListClients;
