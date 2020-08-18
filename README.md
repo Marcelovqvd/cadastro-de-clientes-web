@@ -36,3 +36,7 @@ yarn add react-icons
 yarn add polished
 
 - Lib unform
+
+- lib para validações no formulário -> yup
+yarn add yup
+yarn add @types/yup - D
