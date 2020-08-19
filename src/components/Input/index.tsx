@@ -1,13 +1,9 @@
 import React, { InputHTMLAttributes, useEffect, useRef, useState, useCallback } from 'react';
 import { IconBaseProps } from 'react-icons';
+import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
-
-// este componente input recebe todas as propriedades q um input html tradicional receberia -> InputHTMLAttributes
-// O InputHTMLAttributes recebe um parâmetro de tipagem HTMLInputElement que está global na aplicação
-// Aqui vai sobrescrever o name, tornando-o obrigatório
-// desabilitar a regra em eslintrc.json: Prop spreading is forbiddeneslintreact/jsx-props-no-spreading
+import { Container, Error } from './styles';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -41,7 +37,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest}) => {
   }, [fieldName, registerField]);
 
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
+    <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
       {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputfocus}
@@ -50,7 +46,11 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest}) => {
         {...rest}
       />
 
-      {error}
+      {error && (
+        <Error title={error}>
+          <FiAlertCircle color="#c53030" size={20} />
+        </Error>
+      )}
     </Container>
   );
 };
