@@ -1,4 +1,4 @@
-<p align="center">	
+<p align="left">	
    <a href="https://www.linkedin.com/in/marcelovqvd/">
       <img alt="Marcelo Vasques" src="https://img.shields.io/badge/-MarceloVasques-8257E5?style=flat&logo=Linkedin&logoColor=white" />
    </a>
