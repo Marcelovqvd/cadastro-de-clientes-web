@@ -1,3 +1,57 @@
+<p align="left">
+   <a href="https://www.linkedin.com/in/marcelovqvd/">
+      <img alt="Marcelo Vasques" src="https://img.shields.io/badge/-MarceloVasques-8257E5?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+
+> :rocket: Projeto em desenvolvimento
+
+<div align="center">
+  <sub>Built with ❤︎ by
+    <a href="https://github.com/Marcelovqvd">Marcelo Vasques</a> and
+    <a href="https://github.com/Marcelovqvd/cadastro-de-clientes-web/graphs/contributors">
+      contributors
+    </a>
+  </sub>
+</div>
+
+# :computer: Tecnologias
+Esse projeto foi desenvolvido utilizando-se das seguintes tecnologias:
+
+* [Typescript](https://www.typescriptlang.org/)
+* [React](https://reactjs.org/)
+* [Yup](https://lnkd.in/d2Q4D6v)
+* [Unform](https://lnkd.in/dWhCENG)
+
+# :rocket: Funcionalidades
+
+* Cadastro de clientes.
+
+# :construction_worker:
+```bash
+# Clone o Repositório
+$ git clone https://https://github.com/Marcelovqvd/cadastro-de-clientes-web.git
+```
+
+### 💻 Para executar o Project Web
+
+```bash
+# Instale as depedências
+$ yarn install
+
+# Execute a aplicação
+$ yarn start
+```
+Acesse: http://localhost:3000/ para ver o resultado.
+
+
+# :closed_book: Licencia
+
+Lançado em 2020 :closed_book: Licencia
+
+Made with love by [Marcelo Vasques](https://github.com/Marcelovqvd) 🚀.
+Esse projeto esta sobre [MIT license](./LICENSE).
+
+
 sistema web Reactjs com Typescript
 
 Dados para:
@@ -5,6 +59,7 @@ Dados para:
 1- Cadastro de cliente com Nome, Nascimento, CPF, Celular, E-mail, Endereço e Observação (textarea) e com máscaras nos campos.
 
 Validações:
+
 0) Todos os campos são obrigatórios, exceto observações. (validar antes de tudo);
 
 1) Nome: Não permitir caracteres especiais (somente letras com ou sem acento).
@@ -36,7 +91,3 @@ yarn add react-icons
 yarn add polished
 
 - Lib unform
-
-- lib para validações no formulário -> yup
-yarn add yup
-yarn add @types/yup - D
