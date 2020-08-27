@@ -12,7 +12,6 @@ import Button from '../../components/Button';
 import Input from '../../components/Input';
 
 import { Container, Content, Background } from './styles';
-import getValidationErrors from '../../utils/getValidationErrors';
 
 const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
