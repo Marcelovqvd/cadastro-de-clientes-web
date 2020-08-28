@@ -1,4 +1,6 @@
+
 <p align="left">
+
    <a href="https://www.linkedin.com/in/marcelovqvd/">
       <img alt="Marcelo Vasques" src="https://img.shields.io/badge/-MarceloVasques-8257E5?style=flat&logo=Linkedin&logoColor=white" />
    </a>
@@ -17,10 +19,13 @@
 # :computer: Tecnologias
 Esse projeto foi desenvolvido utilizando-se das seguintes tecnologias:
 
+
 * [Typescript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
-* [Yup](https://lnkd.in/d2Q4D6v)
-* [Unform](https://lnkd.in/dWhCENG)
+=======
+* [Typescript](https://www.typescriptlang.org/)      
+* [React](https://reactjs.org/)  
+
 
 # :rocket: Funcionalidades
 
