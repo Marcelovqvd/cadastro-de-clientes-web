@@ -4,6 +4,7 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 import { Container } from './styles';
 import validationErrors from '../../utils/getValidationErrors';
+import { validateCPF } from 'validations-br';
 
 import Button from '../../components/Button';
 import Input from '../../components/Input';
@@ -18,8 +19,9 @@ const ClientRegister: React.FC = () => {
 
       const schema = Yup.object().shape({
         name: Yup.string(),
-        email: Yup.string().required('O email é obrigatório').email('Digite um endereço de email válido'),
-        password: Yup.string().required().min(6, 'A senha deve ter 6 dígitos no mínimo'),
+        email: Yup.string(),
+        birth: Yup.date().nullable().required('A data de nascimento é obrigatória').min(new Date(1900, 0, 1)),
+        cpf: Yup.string().test("is-cpf", "CPF is not valid", (value: string | null | undefined) => validateCPF('')).required('O CPF é obrigatório')
       });
 
       await schema.validate(data, {
@@ -39,12 +41,12 @@ const ClientRegister: React.FC = () => {
         <h1>Client Register</h1>
         <Input name="name" />
         <Input name="email" />
-        <Input name="birth" placeholder="birth"/>
-        <Input name="cpf" placeholder="cpf"/>
-        <Input name="phone" placeholder="phone"/>
-        <Input name="address" placeholder="address"/>
-        <Input name="obs" placeholder="obs"/>
-        <Input name="date" placeholder="date"/>
+        <Input name="birth" placeholder="Data de nascimento"/>
+        <Input name="cpf" placeholder="CPF"/>
+        <Input name="phone" placeholder="Fone/Whatsapp"/>
+        <Input name="address" placeholder="Endereço"/>
+        <Input name="obs" placeholder="Observação"/>
+        <Input name="date" placeholder="Data"/>
         <Button type="submit">Cadastrar</Button>
       </Form>
     </Container>

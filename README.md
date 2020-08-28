@@ -91,3 +91,9 @@ yarn add react-icons
 yarn add polished
 
 - Lib unform
+
+Validação do CPF
+https://www.npmjs.com/package/validations-br#com-yup
+yarn add validations-br
+
+
